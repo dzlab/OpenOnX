@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">OnX</string>
+    <string name="alarm_controller">alarm controller</string>
+    <string name="one_shot_alarm">one shot alarm</string>
+    <string name="start_repeating_alarm">start repeating alarm</string>
+    <string name="stop_repeating_alarm">stop repeating alarm</string>
+    <string name="one_shot_scheduled">one shot scheduled</string>
+    <string name="repeating_scheduled">repeating scheduled</string>
+    <string name="repeating_unscheduled">repeating unscheduled</string>
+    <string name="one_shot_received">one shot received</string>
+    <string name="repeating_received">repeating received</string>
+    <string name="alarm_service_started">alarm service started</string>
+    <string name="alarm_service_label">alarm service label</string>
+    <string name="alarm_service_finished">alarm service finished</string>
+    <string name="alarm_service">alarm service</string>
+    <string name="start_alarm_service">start alarm service</string>
+    <string name="stop_alarm_service">stop alarm service</string>
+
+</resources>

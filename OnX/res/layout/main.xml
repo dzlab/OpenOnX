@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <EditText android:id="@+id/input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:lines="5"
+    	/>
+    
+    <Button android:id="@+id/voice" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="voiceButtonClicked"
+        android:text="Speak to me!"
+        />
+        
+    <Button android:id="@+id/interpret"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="interpret"       
+        android:layout_gravity="bottom"
+        />
+</LinearLayout>

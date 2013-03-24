@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.dotot"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"   />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"       />	
+	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> 
+	<uses-permission android:name="android.permission.READ_SMS"               />
+    <uses-permission android:name="android.permission.SEND_SMS"               />    
+	<uses-permission android:name="android.permission.RECEIVE_SMS"            />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".controller.AlarmController"
+            	  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />            
+            </intent-filter>
+        </activity>
+        
+        <receiver class="org.dotot.controller.OneShotAlarm"
+            	  android:name="org.dotot.controller.OneShotAlarm">            
+        </receiver>
+        <receiver class="org.dotot.controller.RepeatingAlarm"
+            	  android:name="org.dotot.controller.RepeatingAlarm">            
+        </receiver>        
+        
+        <activity android:name=".service.AlarmService"
+            	  android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />            
+            </intent-filter>
+        </activity>
+        
+        <service class="org.dotot.service.AlarmService_Service" android:name=".service.AlarmService_Service"></service>
+        
+		<!-- Broadcast event listeners -->
+        <receiver android:name="org.dotot.receiver.OutgoingCallReceiver"> 
+            <intent-filter> 
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter> 
+        </receiver>
+                
+        <receiver android:name="org.dotot.receiver.IncomingCallReceiver"> 
+            <intent-filter> 
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter> 
+        </receiver>
+        <receiver android:name="org.dotot.receiver.IncomingSmsReceiver">
+	        <intent-filter>
+	            <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+	        </intent-filter>
+	    </receiver>
+    </application>
+
+    
+</manifest>
